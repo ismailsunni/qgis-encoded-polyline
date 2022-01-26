@@ -2,7 +2,15 @@ import os
 
 from qgis.PyQt import QtCore, uic, Qt
 from qgis.PyQt.QtWidgets import QDialog
-from qgis.core import QgsMessageLog, Qgis
+from qgis.core import (
+    QgsMessageLog,
+    Qgis,
+    QgsVectorLayer,
+    QgsFeature,
+    QgsProject,
+    QgsGeometry,
+    QgsPointXY,
+)
 
 import polyline
 
@@ -39,3 +47,20 @@ class MainDialog(QDialog, FORM_CLASS):
             "Polyline Loader",
             level=Qgis.Info,
         )
+
+        qgis_coords = [QgsPointXY(x, y) for x, y in coordinates]
+        geom = QgsGeometry.fromPolylineXY(qgis_coords)
+
+        # Create memory layer
+        layer = QgsVectorLayer(
+            "LineString?crs=epsg:4326&field=id:integer",
+            "Polyline",
+            "memory",
+        )
+        pr = layer.dataProvider()
+        feature = QgsFeature()
+        feature.setAttributes([1])
+        feature.setGeometry(geom)
+        pr.addFeatures([feature])
+        layer.updateExtents()
+        QgsProject.instance().addMapLayer(layer)
