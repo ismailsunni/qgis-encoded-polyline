@@ -1,0 +1,9 @@
+[general]
+name=Polyline Loader
+description=Load a polyline to a layer
+about=Load a polyline to a layer
+version=1.0
+qgisMinimumVersion=3.0
+author=Ismail Sunni
+email=imajimatika@gmail.com
+repository=ismailsunni.id
