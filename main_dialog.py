@@ -1,4 +1,5 @@
 import os
+import codecs
 
 from qgis.PyQt import QtCore, uic, Qt
 from qgis.PyQt.QtWidgets import QDialog
@@ -38,8 +39,7 @@ class MainDialog(QDialog, FORM_CLASS):
 
     def load_polyline(self):
         polyline_string = self.polyline_text_edit.toPlainText()
-        # polyline_string = 'ezeqxAi~kfMBjBHvBJrAZvCZrCnP~xA`DpYPdBJz@b@dEPdCPnB`@vFz@rKB`@`AjMdC|[v@nJvAnQ\\vE`BjU_@Fa@HaARui@rLLbBzAzR`@vF^|ElFpr@HfA'
-        QgsMessageLog.logMessage(polyline_string, "Polyline Loader", level=Qgis.Info)
+        polyline_string = codecs.decode(polyline_string, "unicode_escape")
         coordinates = polyline.decode(polyline_string, precision=6, geojson=True)
         QgsMessageLog.logMessage(
             "%s coordinates" % len(coordinates), "Polyline Loader", level=Qgis.Info
