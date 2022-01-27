@@ -38,6 +38,8 @@ class MainDialog(QDialog, FORM_CLASS):
 
     def load_polyline(self):
         polyline_string = self.polyline_text_edit.toPlainText()
+        # polyline_string = 'ezeqxAi~kfMBjBHvBJrAZvCZrCnP~xA`DpYPdBJz@b@dEPdCPnB`@vFz@rKB`@`AjMdC|[v@nJvAnQ\\vE`BjU_@Fa@HaARui@rLLbBzAzR`@vF^|ElFpr@HfA'
+        QgsMessageLog.logMessage(polyline_string, "Polyline Loader", level=Qgis.Info)
         coordinates = polyline.decode(polyline_string, precision=6, geojson=True)
         QgsMessageLog.logMessage(
             "%s coordinates" % len(coordinates), "Polyline Loader", level=Qgis.Info
@@ -54,7 +56,7 @@ class MainDialog(QDialog, FORM_CLASS):
         # Create memory layer
         layer = QgsVectorLayer(
             "LineString?crs=epsg:4326&field=id:integer",
-            "Polyline",
+            self.layer_name_line_edit.text(),
             "memory",
         )
         pr = layer.dataProvider()
