@@ -35,20 +35,21 @@ class MainDialog(QDialog, FORM_CLASS):
         QDialog.__init__(self, parent)
         self.setupUi(self)
         self.iface = iface
-        self.load_polyline_button.clicked.connect(self.load_polyline)
+        self.buttonBox.accepted.connect(self.load_polyline)
+        self.buttonBox.accepted.connect(self.accept)
 
     def load_polyline(self):
         polyline_string = self.polyline_text_edit.toPlainText()
         polyline_string = codecs.decode(polyline_string, "unicode_escape")
         coordinates = polyline.decode(polyline_string, precision=6, geojson=True)
-        QgsMessageLog.logMessage(
-            "%s coordinates" % len(coordinates), "Polyline Loader", level=Qgis.Info
-        )
-        QgsMessageLog.logMessage(
-            "First coordinate: %s, %s" % coordinates[0],
-            "Polyline Loader",
-            level=Qgis.Info,
-        )
+        # QgsMessageLog.logMessage(
+        #     "%s coordinates" % len(coordinates), "Polyline Loader", level=Qgis.Info
+        # )
+        # QgsMessageLog.logMessage(
+        #     "First coordinate: %s, %s" % coordinates[0],
+        #     "Polyline Loader",
+        #     level=Qgis.Info,
+        # )
 
         qgis_coords = [QgsPointXY(x, y) for x, y in coordinates]
         geom = QgsGeometry.fromPolylineXY(qgis_coords)

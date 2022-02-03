@@ -1,7 +1,7 @@
 [general]
-name=Polyline Loader
-description=Load a polyline to a layer
-about=Load a polyline to a layer
+name=Encoded Polyline
+description=Encoded Polyline is a plugin to easily show encoded polyline into QGIS.
+about=Encoded Polyline is a plugin to easily show encoded polyline into QGIS.
 version=1.0
 qgisMinimumVersion=3.0
 author=Ismail Sunni
