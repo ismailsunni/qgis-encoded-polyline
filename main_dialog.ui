@@ -48,7 +48,11 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="precisionLineEdit"/>
+      <widget class="QSpinBox" name="precisionSpinBox">
+       <property name="value">
+        <number>6</number>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -70,6 +74,9 @@
     <widget class="QCheckBox" name="zoomToLayerCheckBox">
      <property name="text">
       <string>Zoom to Layer</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
