@@ -63,15 +63,6 @@ class MainDialog(QDialog, FORM_CLASS):
         polyline_string = self.polylineTextEdit.toPlainText()
         polyline_string = codecs.decode(polyline_string, "unicode_escape")
         coordinates = polyline.decode(polyline_string, precision=6, geojson=True)
-        # QgsMessageLog.logMessage(
-        #     "%s coordinates" % len(coordinates), "Polyline Loader", level=Qgis.Info
-        # )
-        # QgsMessageLog.logMessage(
-        #     "First coordinate: %s, %s" % coordinates[0],
-        #     "Polyline Loader",
-        #     level=Qgis.Info,
-        # )
-
         qgis_coords = [QgsPointXY(x, y) for x, y in coordinates]
         geom = QgsGeometry.fromPolylineXY(qgis_coords)
 
@@ -88,3 +79,7 @@ class MainDialog(QDialog, FORM_CLASS):
         pr.addFeatures([feature])
         layer.updateExtents()
         QgsProject.instance().addMapLayer(layer)
+
+        # Zoom to the layer
+        if self.zoomToLayerCheckBox.isChecked():
+            self.iface.mapCanvas().setExtent(layer.extent())
