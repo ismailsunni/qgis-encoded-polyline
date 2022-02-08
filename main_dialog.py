@@ -2,7 +2,7 @@ import os
 import codecs
 
 from qgis.PyQt import QtCore, uic, Qt
-from qgis.PyQt.QtWidgets import QDialog
+from qgis.PyQt.QtWidgets import QDialog, QDialogButtonBox
 from qgis.core import (
     QgsMessageLog,
     Qgis,
@@ -49,6 +49,8 @@ class MainDialog(QDialog, FORM_CLASS):
         self.iface = iface
         self.buttonBox.accepted.connect(self.load_polyline)
         self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+        self.buttonBox.button(QDialogButtonBox.Reset).clicked.connect(self.clear)
         self.randomSamplePushButton.clicked.connect(self.load_random_sample)
         self.current_sample = 0
 
@@ -83,3 +85,6 @@ class MainDialog(QDialog, FORM_CLASS):
         # Zoom to the layer
         if self.zoomToLayerCheckBox.isChecked():
             self.iface.mapCanvas().setExtent(layer.extent())
+
+    def clear(self):
+        self.polylineTextEdit.clear()
