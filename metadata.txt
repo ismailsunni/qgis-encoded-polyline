@@ -7,3 +7,4 @@ qgisMinimumVersion=3.0
 author=Ismail Sunni
 email=imajimatika@gmail.com
 repository=https://github.com/ismailsunni/qgis-encoded-polyline
+icon=./encodedPolyline.svg
