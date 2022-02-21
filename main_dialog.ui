@@ -73,7 +73,7 @@
    <item row="1" column="2">
     <widget class="QCheckBox" name="zoomToLayerCheckBox">
      <property name="text">
-      <string>Zoom to Layer</string>
+      <string>Zoom to Polyline</string>
      </property>
      <property name="checked">
       <bool>true</bool>
