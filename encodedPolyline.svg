@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 5.194 17.615 L 14.508 11.819" fill="none" stroke="#000" style=""/>
+  <path d="M 8.994 3.178 L 18.684 3.709" fill="none" stroke="#000" style=""/>
+  <path d="M 13.63 10.079 L 7.63 5.108" fill="none" stroke="#000" style="" transform="matrix(-1, 0, 0, -1, 21.26, 15.187)"/>
+  <path d="M 5.677 19.653 L 16.361 20.201" fill="none" stroke="#000" style=""/>
+  <circle cx="6.5" cy="3" r="2.5" style="fill: rgb(42, 127, 255); stroke: rgb(51, 51, 51); stroke-linejoin: round; stroke-miterlimit: 0.4; stroke-opacity: 0.972549; stroke-width: 0.32px;"/>
+  <circle cx="20.65" cy="4.038" r="2.5" style="fill: rgb(42, 127, 255); stroke: rgb(51, 51, 51); stroke-linejoin: round; stroke-miterlimit: 0.4; stroke-opacity: 0.972549; stroke-width: 0.32px;"/>
+  <circle cx="18.727" cy="20.548" r="2.5" style="fill: rgb(42, 127, 255); stroke: rgb(51, 51, 51); stroke-linejoin: round; stroke-miterlimit: 0.4; stroke-opacity: 0.972549; stroke-width: 0.32px;"/>
+  <circle cx="15.387" cy="11.008" r="2.5" style="stroke-width: 0.29px; fill: rgb(42, 127, 255); stroke: rgb(51, 51, 51); stroke-linejoin: round; stroke-miterlimit: 0.4; stroke-opacity: 0.972549;"/>
+  <circle cx="3.726" cy="19.268" r="2.5" style="fill: rgb(42, 127, 255); stroke: rgb(51, 51, 51); stroke-linejoin: round; stroke-miterlimit: 0.4; stroke-opacity: 0.972549; stroke-width: 0.32px;"/>
+</svg>
