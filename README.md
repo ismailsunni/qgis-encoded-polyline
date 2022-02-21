@@ -4,7 +4,9 @@
 
 The plugin helps you to decode and visualize an encoded polyline and load it on QGIS as a memory layer.
 
-<img src="./pluginPreview.png" />
+<img src="./images/pluginPreview.png" />
+
+<img src="./images/ringRoadJogjaSample.png" />
 
 ## Why?
 
