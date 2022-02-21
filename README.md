@@ -2,7 +2,18 @@
 
 <img src="./encodedPolyline.svg" />
 
-The plugin helps you to decode an encoded polyline and load it on QGIS.
+The plugin helps you to decode and visualize an encoded polyline and load it on QGIS as a memory layer.
+
+<img src="./pluginPreview.png" />
+
+## Why?
+
+It helps to decode or visualize an encoded polyline easier. Especially with a long polyline.
+
+## Features
+- Custom layer name
+- Custom precision (Google uses 5, OpenStreetMap uses 6)
+- Some samples included
 
 ## About Encoded Polyline
 
