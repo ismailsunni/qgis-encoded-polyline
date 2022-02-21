@@ -28,7 +28,7 @@ class EncodedPolylinePlugin:
         )
         action_icon = QIcon(icon_path)
         self.main_action = QAction(
-            action_icon, "Encoded Polygon", self.iface.mainWindow()
+            action_icon, "Encoded Polyline", self.iface.mainWindow()
         )
         self.main_action.triggered.connect(self.open_main_dialog)
         self.iface.addToolBarIcon(self.main_action)
