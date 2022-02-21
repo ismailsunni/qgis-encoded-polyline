@@ -9,7 +9,9 @@
 # (at your option) any later version.
 # ---------------------------------------------------------------------
 
+import os
 from PyQt5.QtWidgets import QAction, QMessageBox
+from PyQt5.QtGui import QIcon
 
 
 def classFactory(iface):
@@ -21,7 +23,13 @@ class EncodedPolylinePlugin:
         self.iface = iface
 
     def initGui(self):
-        self.main_action = QAction("EP", self.iface.mainWindow())
+        icon_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "encodedPolyline.svg")
+        )
+        action_icon = QIcon(icon_path)
+        self.main_action = QAction(
+            action_icon, "Encoded Polygon", self.iface.mainWindow()
+        )
         self.main_action.triggered.connect(self.open_main_dialog)
         self.iface.addToolBarIcon(self.main_action)
 
