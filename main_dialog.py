@@ -90,6 +90,9 @@ class MainDialog(QDialog, FORM_CLASS):
         feature.setGeometry(geom)
         pr.addFeatures([feature])
         layer.updateExtents()
+        style_path = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "redLineStyle.qml"
+        )
         QgsProject.instance().addMapLayer(layer)
 
         # Zoom to the layer
