@@ -1,4 +1,4 @@
-# <img src="./encodedPolyline.svg" /> Encoded Polygon QGIS Plugin
+# <img src="./encodedPolyline.svg" /> Encoded Polyline QGIS Plugin
 
 The plugin helps you to decode and visualize an encoded polyline and load it on QGIS as a memory layer.
 
