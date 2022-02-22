@@ -4,13 +4,11 @@
 
 The plugin helps you to decode and visualize an encoded polyline and load it on QGIS as a memory layer.
 
-<img src="./images/pluginPreview.png" />
-
-<img src="./images/ringRoadJogjaSample.png" />
+<img src="./images/pluginInAction.gif" />
 
 ## Why?
 
-It helps to decode or visualize an encoded polyline easier. Especially with a long polyline.
+It helps to decode or visualize an encoded polyline easier. Especially with a long polyline. I used it for debugging Valhalla's result because the online tool available is limited in functionalities (e.g. can't compare two polylines, hang if the line is long, or not possible to save the result)
 
 ## Features
 - Custom layer name
