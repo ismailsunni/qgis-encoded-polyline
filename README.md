@@ -2,7 +2,13 @@
 
 The plugin helps you to decode and visualize an encoded polyline and load it on QGIS as a memory layer.
 
-<img src="./images/pluginInAction.gif" />
+<img src="./images/pluginPreview.png" />
+
+*Encoded Polyline Dialog*
+
+<img src="./images/ringRoadJogjaSample.jpg" />
+
+*Sample output: Yogyakarta Ring Road*
 
 ## Why?
 
