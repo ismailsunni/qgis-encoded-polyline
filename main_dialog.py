@@ -93,6 +93,7 @@ class MainDialog(QDialog, FORM_CLASS):
         style_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)), "redLineStyle.qml"
         )
+        layer.loadNamedStyle(style_path)
         QgsProject.instance().addMapLayer(layer)
 
         # Zoom to the layer
