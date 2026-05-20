@@ -17,7 +17,7 @@ Three-file core, each with a clear role:
 
 - `__init__.py` — QGIS plugin entry point. `classFactory(iface)` returns `EncodedPolylinePlugin`, which registers a single toolbar action. The dialog is imported lazily inside `open_main_dialog` so QGIS startup stays cheap.
 - `main_dialog.py` — `MainDialog` (QDialog) loaded from `main_dialog.ui` via `uic.loadUiType`. Owns all UI logic: reads the encoded string + precision from the form, calls `polyline.decode`, builds a `QgsVectorLayer` (memory provider, LineString, EPSG:4326), adds a single `QgsFeature` with a `QgsGeometry.fromPolylineXY([QgsPointXY(lon, lat), ...])`, applies `redLineStyle.qml`, and adds the layer to `QgsProject.instance()`. The module-level `EXAMPLES` list populates the sample dropdown.
-- `polyline.py` — vendored copy of https://github.com/frederickjansen/polyline (`PolylineCodec` + module-level `decode`/`encode`). Depends on `six`. Coordinates returned as `(lat, lon)` tuples unless `geojson=True`. Do not refactor casually — keep upstream-compatible.
+- `polyline.py` — vendored copy of https://github.com/frederickjansen/polyline (`PolylineCodec` + module-level `decode`/`encode`), de-`six`-ified for Python 3 only. Coordinates returned as `(lat, lon)` tuples unless `geojson=True`. Do not refactor casually — keep upstream-compatible.
 
 Coordinate ordering is the easiest place to introduce a bug: `polyline.decode` returns `(lat, lon)`, but `QgsPointXY` takes `(x, y) = (lon, lat)`. Any code touching the decode → geometry path must swap.
 
@@ -31,4 +31,4 @@ Coordinate ordering is the easiest place to introduce a bug: `polyline.decode` r
 ## Conventions
 
 - Precision: Google Maps uses 5, OpenStreetMap/Valhalla uses 6. The dialog exposes this; don't hardcode.
-- Python is QGIS' bundled interpreter (PyQt5 + `qgis.core`). Don't add dependencies that aren't already shipped with QGIS — `six` is the only third-party module currently vendored, via `polyline.py`.
+- Python is QGIS' bundled interpreter; the plugin runs on QGIS 3 (Qt5) and QGIS 4 (Qt6). Always import Qt classes via `qgis.PyQt.*` (never `PyQt5.*` directly) and use the scoped enum form (e.g. `QDialogButtonBox.StandardButton.Reset`, not `QDialogButtonBox.Reset`) so the same code works on both. `metadata.txt` declares `supportsQt6=True`.

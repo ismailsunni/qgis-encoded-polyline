@@ -1,7 +1,7 @@
 import os
 import codecs
 
-from qgis.PyQt import QtCore, uic, Qt
+from qgis.PyQt import uic
 from qgis.PyQt.QtWidgets import QDialog, QDialogButtonBox
 from qgis.core import (
     QgsMessageLog,
@@ -13,7 +13,7 @@ from qgis.core import (
     QgsPointXY,
 )
 
-import polyline
+from . import polyline
 
 
 def get_ui_class(ui_file):
@@ -57,7 +57,7 @@ class MainDialog(QDialog, FORM_CLASS):
         self.buttonBox.accepted.connect(self.load_polyline)
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
-        self.buttonBox.button(QDialogButtonBox.Reset).clicked.connect(self.clear)
+        self.buttonBox.button(QDialogButtonBox.StandardButton.Reset).clicked.connect(self.clear)
         self.randomSamplePushButton.clicked.connect(self.load_random_sample)
         self.current_sample = 0
 
