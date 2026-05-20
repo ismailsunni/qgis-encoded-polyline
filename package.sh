@@ -1,1 +1,9 @@
-rm -f encoded-polyline.zip && git archive --prefix=encoded-polyline/ -o encoded-polyline.zip HEAD
+rm -f encoded-polyline.zip && git archive --prefix=encoded-polyline/ -o encoded-polyline.zip HEAD \
+    __init__.py \
+    main_dialog.py \
+    main_dialog.ui \
+    polyline.py \
+    metadata.txt \
+    redLineStyle.qml \
+    encodedPolyline.svg \
+    LICENSE
