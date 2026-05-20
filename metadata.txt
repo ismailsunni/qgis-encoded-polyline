@@ -2,10 +2,16 @@
 name=Encoded Polyline
 description=Encoded Polyline is a plugin to easily show encoded polyline into QGIS.
 about=Encoded Polyline is a plugin to easily show encoded polyline into QGIS.
-version=1.0
+version=1.0.0
 supportsQt6=True
 qgisMinimumVersion=3.0
 qgisMaximumVersion=4.99
+changelog=1.0.0
+    - Add QGIS 4 / Qt6 support
+    - Drop the vendored `six` dependency
+    - Package only the files needed for the plugin upload
+ 0.9
+    - Initial public release
 author=Ismail Sunni
 email=imajimatika@gmail.com
 repository=https://github.com/ismailsunni/qgis-encoded-polyline
