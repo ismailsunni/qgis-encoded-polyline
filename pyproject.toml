@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib --confcutdir=tests"
+
+[tool.ruff]
+exclude = ["polyline.py"]

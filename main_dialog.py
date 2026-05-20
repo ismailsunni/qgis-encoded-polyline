@@ -4,8 +4,6 @@ import codecs
 from qgis.PyQt import uic
 from qgis.PyQt.QtWidgets import QDialog, QDialogButtonBox
 from qgis.core import (
-    QgsMessageLog,
-    Qgis,
     QgsVectorLayer,
     QgsFeature,
     QgsProject,
