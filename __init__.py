@@ -10,8 +10,8 @@
 # ---------------------------------------------------------------------
 
 import os
-from PyQt5.QtWidgets import QAction, QMessageBox
-from PyQt5.QtGui import QIcon
+from qgis.PyQt.QtWidgets import QAction
+from qgis.PyQt.QtGui import QIcon
 
 
 def classFactory(iface):
@@ -41,4 +41,4 @@ class EncodedPolylinePlugin:
         from .main_dialog import MainDialog
 
         dialog = MainDialog(parent=self.iface.mainWindow(), iface=self.iface)
-        dialog.exec_()  # modal
+        dialog.exec()  # modal
