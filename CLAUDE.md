@@ -31,4 +31,4 @@ Coordinate ordering is the easiest place to introduce a bug: `polyline.decode` r
 ## Conventions
 
 - Precision: Google Maps uses 5, OpenStreetMap/Valhalla uses 6. The dialog exposes this; don't hardcode.
-- Python is QGIS' bundled interpreter; the plugin runs on QGIS 3 (Qt5) and QGIS 4 (Qt6). Always import Qt classes via `qgis.PyQt.*` (never `PyQt5.*` directly) and use the scoped enum form (e.g. `QDialogButtonBox.StandardButton.Reset`, not `QDialogButtonBox.Reset`) so the same code works on both. `metadata.txt` declares `supportsQt6=True`.
+- Python is QGIS' bundled interpreter; the plugin runs on QGIS 3 (Qt5) and QGIS 4 (Qt6). Always import Qt classes via `qgis.PyQt.*` (never `PyQt5.*` directly) and use the scoped enum form (e.g. `QDialogButtonBox.StandardButton.Reset`, not `QDialogButtonBox.Reset`) so the same code works on both. `metadata.txt` declares `qgisMaximumVersion=4.99` to opt into the QGIS 4 Ready list.
